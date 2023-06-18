@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Condensed:wght@300&display=swap");
+@import "~ngx-toastr/toastr";
 :root {
   --primary-color: #026467 !important;
   --secondary-color: #e5f5ea;
