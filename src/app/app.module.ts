@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,10 +10,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment.prod';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { CategoriesComponent } from './categories/categories.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AllPostComponent } from './posts/all-post/all-post.component';
+import { NewPostComponent } from './posts/new-post/new-post.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AllPostComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
+    HttpClientModule,
     ToastrModule.forRoot(),
+    AngularEditorModule,
+    ReactiveFormsModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
 
   ],
   providers: [],
